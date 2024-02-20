@@ -1,7 +1,8 @@
+"use strict";
 $(document).ready(function () {
     // Função para atualizar a imagem e mudar a cor do botão selecionado
     function updateImageAndButtonColor() {
-        var totalPoints = 0;
+        let totalPoints = 0;
 
         // Somar os pontos dos botões selecionados
         $(".age-button.selected, .imc-button.selected, .stress-button.selected").each(function () {
@@ -27,7 +28,7 @@ $(document).ready(function () {
 
     // Selecionar niveis
     $("#nivel").on('change', function () {
-        var numNiveis = parseInt($(this).val());
+        let numNiveis = parseInt($(this).val());
 
         // Verificar se o número de níveis está dentro do intervalo
         if (numNiveis >= 3 && numNiveis <= 6) {
@@ -35,7 +36,7 @@ $(document).ready(function () {
             $(".stress-button").remove();
 
             // Adicionar os botões de stress de acordo com o número especificado
-            for (var i = 1; i <= numNiveis; i++) {
+            for (let i = 1; i <= numNiveis; i++) {
                 $(".stress.section").append('<button id="stress-button-' + i + '" data-points="' 
                 + (i - 1) * 2 + '" class="stress-button">Nível ' + i + '</button>');
             }
@@ -49,7 +50,7 @@ $(document).ready(function () {
 
     // Ao clicar em um botão de idade
     $(".age-button").on('click', function () {
-        var $this = $(this);
+        let $this = $(this);
 
         // Remover a classe 'selected' de todos os botões de idade
         $(".age-button").removeClass("selected");
@@ -67,7 +68,7 @@ $(document).ready(function () {
 
     // Ao clicar em um botão de IMC
     $(".imc-button").on('click', function () {
-        var $this = $(this);
+        let $this = $(this);
 
         // Remover a classe 'selected' de todos os botões de IMC
         $(".imc-button").removeClass("selected");
@@ -85,7 +86,7 @@ $(document).ready(function () {
 
     // Ao clicar em um botão de stress
     $(document).on('click', '.stress-button', function () {
-        var $this = $(this);
+        let $this = $(this);
 
         // Remover a classe 'selected' de todos os botões de stress
         $(".stress-button").removeClass("selected");
